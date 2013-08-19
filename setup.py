@@ -9,5 +9,4 @@ setup(name='wordpress_api_models',
       author_email='rob@beagrie.com',
       url='https://github.com/rbeagrie/django-wordpress-api-models',
       packages=['wordpress_api_models'],
-      install_requires=['xml_models','json_models','common_models']
      )

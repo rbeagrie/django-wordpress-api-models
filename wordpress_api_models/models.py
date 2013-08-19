@@ -1,4 +1,4 @@
-from base_model import WordpressModel
+import json_models
 
 # Create your models here.
 class Site(json_models.Model):

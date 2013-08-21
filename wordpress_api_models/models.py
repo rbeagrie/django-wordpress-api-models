@@ -16,6 +16,7 @@ class Post(json_models.Model):
    title = json_models.CharField(path='title')
    url = json_models.CharField(path='URL')
    excerpt = json_models.CharField(path='excerpt')
+   content = json_models.CharField(path='content')
    finders = { (site_id,): "https://public-api.wordpress.com/rest/v1/sites/%s/posts" }
 
    # The wordpress api returns a json object containing the keys 'found' and 'posts'. 

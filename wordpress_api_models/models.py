@@ -1,4 +1,5 @@
 import json_models
+import fields
 from meta_models import WPMetaModel
 
 # Create your models here.
@@ -15,6 +16,7 @@ class Post(json_models.Model):
    site_id = json_models.IntField(path='some.non.existant.path')
    title = json_models.CharField(path='title')
    url = json_models.CharField(path='URL')
+   date = fields.DateField(path='date')
    excerpt = json_models.CharField(path='excerpt')
    content = json_models.CharField(path='content')
    finders = { (site_id,): "https://public-api.wordpress.com/rest/v1/sites/%s/posts" }

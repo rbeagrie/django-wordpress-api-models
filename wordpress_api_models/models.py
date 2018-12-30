@@ -1,6 +1,6 @@
 import json_models
-import fields
-from meta_models import WPMetaModel
+from . import fields
+from .meta_models import WPMetaModel
 
 # Create your models here.
 class Site(json_models.Model):
@@ -8,8 +8,7 @@ class Site(json_models.Model):
    name = json_models.CharField(path='name')
    finders = { (id,): "https://public-api.wordpress.com/rest/v1/sites/%i" }
 
-class Post(json_models.Model):
-   __metaclass__ = WPMetaModel
+class Post(json_models.Model, metaclass=WPMetaModel):
    id = json_models.IntField(path='ID')
    # The wordpress API does not return the site_id for a post, but we need it as a key for the finder
    # so we'll just use a non-existant path... tldr: this is an ugly hack
